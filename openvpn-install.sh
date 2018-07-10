@@ -568,17 +568,18 @@ $CIPHER
 tls-server
 tls-version-min 1.2
 tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
-#improves
+
 sndbuf 393216
 rcvbuf 393216
-tcp-nodelay
-fast-io
-float
 push "sndbuf 393216"
 push "rcvbuf 393216"
+float
+tcp-nodelay
+fast-io
+push "float"
 push "tcp-nodelay"
 push "fast-io"
-push "float"
+
 status openvpn.log
 verb 3" >> /etc/openvpn/server.conf
 
