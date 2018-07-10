@@ -574,7 +574,13 @@ verb 3" >> /etc/openvpn/server.conf
 echo 'sndbuf 393216
 rcvbuf 393216
 push "sndbuf 393216"
-push "rcvbuf 393216" '>> /etc/openvpn/server.conf
+push "rcvbuf 393216"
+float
+tcp-nodelay
+fast-io
+push "float"
+push "tcp-nodelay"
+push "fast-io" '>> /etc/openvpn/server.conf
 
 	# Create the sysctl configuration file if needed (mainly for Arch Linux)
 	if [[ ! -e $SYSCTL ]]; then
