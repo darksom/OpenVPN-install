@@ -219,7 +219,7 @@ else
 	echo ""
 	echo "What port do you want for OpenVPN?"
 	read -p "Port: " -e -i 1194 PORT
-	# If $IP is a private IP address, the server must be behind NAT
+	# If $IP is a private IP address, the server must be behind NAT
 	if echo "$IP" | grep -qE '^(10\.|172\.1[6789]\.|172\.2[0-9]\.|172\.3[01]\.|192\.168)'; then
 		echo ""
 		echo "This server is behind NAT. What is the public IPv4 address or hostname?"
@@ -529,6 +529,7 @@ ifconfig-pool-persist ipp.txt" >> /etc/openvpn/server.conf
 		;;
 		3) # Quad9
 		echo 'push "dhcp-option DNS 9.9.9.9"' >> /etc/openvpn/server.conf
+		echo 'push "dhcp-option DNS 149.112.112.112"' >> /etc/openvpn/server.conf
 		;;
 		4) # FDN
 		echo 'push "dhcp-option DNS 80.67.169.40"' >> /etc/openvpn/server.conf
