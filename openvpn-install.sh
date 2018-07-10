@@ -573,12 +573,6 @@ sndbuf 393216
 rcvbuf 393216
 push "sndbuf 393216"
 push "rcvbuf 393216"
-float
-tcp-nodelay
-fast-io
-push "float"
-push "tcp-nodelay"
-push "fast-io"
 
 status openvpn.log
 verb 3" >> /etc/openvpn/server.conf
