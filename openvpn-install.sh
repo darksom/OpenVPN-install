@@ -569,6 +569,17 @@ tls-server
 tls-version-min 1.2
 tls-cipher TLS-DHE-RSA-WITH-AES-128-GCM-SHA256
 status openvpn.log
+#improves
+sndbuf 393216
+rcvbuf 393216
+tcp-nodelay
+fast-io
+float
+push "sndbuf 393216"
+push "rcvbuf 393216"
+push "tcp-nodelay"
+push "fast-io"
+push "float"
 verb 3" >> /etc/openvpn/server.conf
 
 	# Create the sysctl configuration file if needed (mainly for Arch Linux)
